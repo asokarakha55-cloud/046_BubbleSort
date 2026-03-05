@@ -33,22 +33,59 @@ void input()
 
 void bubbleSort()
 {
-    int pass = 1;
-    for (int j = 0; j <= n - 1 - pass; j++)
     {
-        if (arr[j] > arr[j + 1])
+        int pass = 1;
+        for (int j = 0; j <= n - 1 - pass; j++)
         {
-            int temp = arr[j];
-            temp = arr[j];
-            arr[j] = arr[j + 1];
-            arr[j + 1] = temp;
+            if (arr[j] > arr[j + 1])
+            {
+                int temp = arr[j];
+                temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+        pass += 1;
+
+        cout << "\npass " << pass - 1 << ": ";
+        for (int k = 0; k < n; k++)
+        {
+            cout << arr[k] << " ";
+        }
+        cout << endl;
+    }
+    while (pass <= n - 1)
+        ;
+}
+
+void display()
+{
+    cout << "\n====================" << endl;
+    cout << "Elemen Array yang sudah tersusun" << endl;
+    cout << "====================" << endl;
+    cout << endl;
+    for (int j = 0; j < n; j++)
+    {
+        if (j < n - 1)
+        {
+            cout << " --> ";
         }
     }
-    pass += 1;
+    cout << endl;
+    cout << endl;
 
-    cout << "\npass " << pass - 1 << ": ";
-    for (int k = 0; k < n; k++)
-    {
-        cout << arr[k] << " ";
-    }
+    cout << "jumlah pass = " << n - 1 << endl;
+    cout << endl;
+    cout << endl;
+}
+
+int main()
+{
+    input();
+
+    bubbleSortArray();
+    display();
+
+    system("pause");
+    return 0;
 }
