@@ -44,4 +44,5 @@ void bubbleSort()
             arr[j + 1] = temp;
         }
     }
+    pass += 1;
 }
