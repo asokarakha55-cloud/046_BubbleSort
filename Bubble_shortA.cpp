@@ -4,25 +4,23 @@ using namespace std;
 
 int arr[20];
 int n;
-
 void input()
 {
-    int d;
     while (true)
     {
-        cout << "masukkan banyak elemen padaa array : ";
+        cout << "Masukkan banyaknya elemen pada array: ";
         cin >> n;
         if (n <= 20)
             break;
         else
         {
-            cout << "\nArray dapat mempunyai maksimal 20 elemen.\n";
+            cout << "\nArray dapat memiliki maksimal 20 elemen.\n";
         }
     }
     cout << endl;
-    cout << "====================" << endl;
+    cout << "\n===================" << endl;
     cout << "Masukkan Elemen Array" << endl;
-    cout << "====================" << endl;
+    cout << "===================" << endl;
 
     for (int i = 0; i < n; i++)
     {
@@ -31,15 +29,17 @@ void input()
     }
 }
 
-void bubbleSort()
+void BubbleSortArray()
 {
+    int pass = 1;
+
+    do
     {
-        int pass = 1;
         for (int j = 0; j <= n - 1 - pass; j++)
         {
             if (arr[j] > arr[j + 1])
             {
-                int temp = arr[j];
+                int temp;
                 temp = arr[j];
                 arr[j] = arr[j + 1];
                 arr[j + 1] = temp;
@@ -47,25 +47,26 @@ void bubbleSort()
         }
         pass += 1;
 
-        cout << "\npass " << pass - 1 << ": ";
+        cout << "\nPass " << pass - 1 << ": ";
         for (int k = 0; k < n; k++)
         {
             cout << arr[k] << " ";
         }
         cout << endl;
-    }
-    while (pass <= n - 1)
-        ;
+
+    } while (pass <= n - 1);
 }
 
 void display()
 {
-    cout << "\n====================" << endl;
-    cout << "Elemen Array yang sudah tersusun" << endl;
-    cout << "====================" << endl;
+    cout << endl;
+    cout << "================================" << endl;
+    cout << "Elemen Array yang telah tersusun" << endl;
+    cout << "================================" << endl;
     cout << endl;
     for (int j = 0; j < n; j++)
     {
+        cout << arr[j];
         if (j < n - 1)
         {
             cout << " --> ";
@@ -74,16 +75,14 @@ void display()
     cout << endl;
     cout << endl;
 
-    cout << "jumlah pass = " << n - 1 << endl;
-    cout << endl;
+    cout << "Jumlah Pass = " << n - 1 << endl;
     cout << endl;
 }
 
 int main()
 {
     input();
-
-    bubbleSortArray();
+    BubbleSortArray();
     display();
 
     system("pause");
